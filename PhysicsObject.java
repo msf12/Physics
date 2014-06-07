@@ -1,7 +1,7 @@
 
 public class PhysicsObject 
 {
-	private int DIM =3;
+	private static int DIM =3;
 	
 	private double[] velocity = new double[DIM];
 	
@@ -55,7 +55,7 @@ public class PhysicsObject
 	{
 		for(int i =0; i <DIM; i++)
 		{
-			velocity[i]= acc[i]*time;
+			velocity[i]= velocity[i] + acc[i]*time;
 		}
 		for(int i=0; i < DIM; i++)
 		{
@@ -63,5 +63,34 @@ public class PhysicsObject
 		}
 		return position;
 	}
+	
+	public double[] getVel ()
+	{
+		return velocity;
+	}
+	
+	public double[] getPos()
+	{
+		return position;
+	}
+	
+	public double getMass()
+	{
+		return mass;
+	}
+	
+	public void setVel (double[] newVel)
+	{
+		velocity = newVel;
+	}
 
+	public void setPos (double[] newPos)
+	{
+		position= newPos;
+	}
+	
+	public void setMass(double newMass)
+	{
+		mass= newMass;
+	}
 }
