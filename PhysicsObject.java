@@ -13,23 +13,28 @@ public class PhysicsObject
 	
 	public PhysicsObject ()
 	{
+		this(0);
+	}
+	
+	//Mass but no velocity
+	public PhysicsObject (double m)
+	{
 		for(int i=0; i< DIM;i++)
 		{
 			velocity[i]=0;
 			position[i]=0;
 		}
 		
-		mass=0;
-	}
-	
-	//Mass but no velocity
-	public PhysicsObject (double massi)
-	{
-		mass= massi;
+		mass= m;
 	}
 	
 	public PhysicsObject (double[] vel, double m)
 	{
+		for(int i=0; i< DIM;i++)
+		{
+			position[i]=0;
+		}
+		
 		mass= m;
 		velocity = vel;
 	}
