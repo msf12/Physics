@@ -51,7 +51,7 @@ public class PhysicsObject
 		
 		for(int i=0; i < DIM; i++)
 		{
-			position[i]= velocity[i]*time;
+			position[i]= position[i] + velocity[i]*time;
 		}
 		return position;
 	}
@@ -64,7 +64,7 @@ public class PhysicsObject
 		}
 		for(int i=0; i < DIM; i++)
 		{
-			position[i]= velocity[i]*time;
+			position[i]= position[i] + velocity[i]*time;
 		}
 		return position;
 	}
