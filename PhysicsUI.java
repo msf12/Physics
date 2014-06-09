@@ -1,0 +1,1 @@
+//User info: position and velocity in xyz or position in xyz and velocity in magnitude, angle, angle
