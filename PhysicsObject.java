@@ -2,6 +2,7 @@ public class PhysicsObject
 {
 	private static int DIM =3;
 
+	//Maintaining an XYZ convetion for listing of coordinates
 	private double[] velocity = new double[DIM];
 
 	private double[] position = new double[DIM];
@@ -45,6 +46,9 @@ public class PhysicsObject
 		position = pos;
 	}
 
+	//Theta is the angle between x and y axis,
+	//Phi is the angle between the z axis and the x-y plane
+	
 	public PhysicsObject (double[] pos, double magnitude, double theta, double phi, double m)
 	{
 		mass = m;
