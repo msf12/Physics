@@ -13,47 +13,12 @@ public class PhysicsObject
 
 	public PhysicsObject ()
 	{
-		this(0);
-	}
-
-	//Mass but no velocity
-	public PhysicsObject (double m)
-	{
-		for(int i=0; i< DIM;i++)
+		for(int i=0;i<DIM;i++)
 		{
 			velocity[i]=0;
 			position[i]=0;
 		}
-
-		mass= m;
-	}
-
-	public PhysicsObject (double[] vel, double m)
-	{
-		for(int i=0; i< DIM;i++)
-		{
-			position[i]=0;
-		}
-
-		mass= m;
-		velocity = vel;
-	}
-
-	public PhysicsObject (double[] vel, double[] pos, double m)
-	{
-		mass= m;
-		velocity = vel;
-		position = pos;
-	}
-
-	//Theta is the angle between x and y axis,
-	//Phi is the angle between the z axis and the x-y plane
-	
-	public PhysicsObject (double[] pos, double magnitude, double theta, double phi, double m)
-	{
-		mass = m;
-		position = pos ;
-		velocity = this.sphToCartCoodinates(magnitude, theta, phi);
+		mass=0;
 	}
 	
 	public double[] sphToCartCoodinates (double mag , double theta, double phi)
@@ -109,6 +74,14 @@ public class PhysicsObject
 		velocity = newVel;
 	}
 
+	//Theta is the angle between x and y axis,
+	//Phi is the angle between the z axis and the x-y plane
+	
+	public void setVelAngle (double magnitude, double theta, double phi)
+	{
+		velocity = this.sphToCartCoodinates(magnitude, theta, phi);
+	}
+	
 	public void setPos (double[] newPos)
 	{
 		position= newPos;
