@@ -26,8 +26,7 @@ public class PhysicsUI
 				if(sc.nextLine().equalsIgnoreCase("y")) {
 					//how will velocity be added?
 					System.out.println("What form would you like to add velocity in?\n[1] (x,y,z)\n[2] (magnitude,theta,phi)");
-					if(sc.nextInt() == 1) {
-						sc.nextLine();
+					if(Integer.parseInt(sc.nextLine()) == 1) {
 						double[] velocity = new double[DIM];
 						do {
 							System.out.println("What is the object's velocity in the form (x,y,z)?");
@@ -39,8 +38,7 @@ public class PhysicsUI
 						}
 						newObject.setVel(velocity);
 					}
-					else if(sc.nextInt() == 2) {
-						sc.nextLine();
+					else if(Integer.parseInt(sc.nextLine()) == 2) {
 						double[] velocity = new double[DIM];
 						do {
 							System.out.println("What is the object's velocity in the form (magnitude,theta,phi)?");
